@@ -6,7 +6,6 @@ import {
 } from "./ui/navigation-menu";
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
-import ModeToggle from "./ModeToggle";
 
 const navItems = [
   {
