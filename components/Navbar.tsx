@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   NavigationMenu,
@@ -6,7 +8,9 @@ import {
 } from "./ui/navigation-menu";
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   {
@@ -28,24 +32,36 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <div>
       <NavigationMenu>
         <NavigationMenuList>
-          {navItems.map((item) => NavbarItem(item.title, item.href))}
+          {navItems.map((item) => NavbarItem(item.title, item.href, pathname))}
         </NavigationMenuList>
       </NavigationMenu>
     </div>
   );
 };
 
-const NavbarItem = (title: string, href: string) => {
+const NavbarItem = (title: string, href: string, pathname: string) => {
+  const isActive = pathname === href;
+
   return (
     <NavigationMenuItem key={href}>
       <NavigationMenuLink asChild>
-        <Button variant={"ghost"} className="rounded-full px-3 md:px-4">
-          <Link href={href}>{title}</Link>
-        </Button>
+        <Link href={href}>
+          <Button
+            variant={"ghost"}
+            className={cn(
+              "rounded-full px-3 md:px-4",
+              isActive && "bg-accent text-accent-foreground"
+            )}
+          >
+            {title}
+          </Button>
+        </Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
   );

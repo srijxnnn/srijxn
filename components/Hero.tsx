@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <main className="flex items-center justify-center px-6">
       <section className="text-center">
-        <div className="text-5xl font-bold">
+        <div className="text-4xl md:text-6xl font-bold">
           Hi! I am
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ModeToggle from "@/components/ModeToggle";
 import Navbar from "@/components/Navbar";
@@ -12,11 +13,9 @@ export default function Home() {
       </nav>
       <Hero />
 
-      <footer className="p-8 text-xs">
-        ~ built with next.js + shadcn/ui ~
-      </footer>
+      <Footer />
 
-      <Particles className="-z-50 absolute inset-0 h-screen w-full" />
+      <Particles className="-z-50 fixed inset-0 h-full w-full" />
     </div>
   );
 }
