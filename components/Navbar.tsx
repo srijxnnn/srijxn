@@ -6,6 +6,7 @@ import {
 } from "./ui/navigation-menu";
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const navItems = [
   {
@@ -29,7 +30,7 @@ const navItems = [
 const Navbar = () => {
   return (
     <div>
-      <NavigationMenu className="p-5">
+      <NavigationMenu>
         <NavigationMenuList>
           {navItems.map((item) => NavbarItem(item.title, item.href))}
         </NavigationMenuList>
@@ -42,12 +43,9 @@ const NavbarItem = (title: string, href: string) => {
   return (
     <NavigationMenuItem key={href}>
       <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          className="p-1 hover:underline hover:underline-offset-4"
-        >
-          {title}
-        </Link>
+        <Button variant={"ghost"} className="rounded-full px-3 md:px-4">
+          <Link href={href}>{title}</Link>
+        </Button>
       </NavigationMenuLink>
     </NavigationMenuItem>
   );
