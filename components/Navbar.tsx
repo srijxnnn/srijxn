@@ -11,6 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import ModeToggle from "./ModeToggle";
 
 const navItems = [
   {
@@ -35,13 +36,14 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div>
+    <nav className="flex items-center justify-center border rounded-full mt-3 gap-1 sticky top-3 z-50 backdrop-blur-md">
       <NavigationMenu>
         <NavigationMenuList>
           {navItems.map((item) => NavbarItem(item.title, item.href, pathname))}
         </NavigationMenuList>
       </NavigationMenu>
-    </div>
+      <ModeToggle />
+    </nav>
   );
 };
 
@@ -56,7 +58,8 @@ const NavbarItem = (title: string, href: string, pathname: string) => {
             variant={"ghost"}
             className={cn(
               "rounded-full px-3 md:px-4",
-              isActive && "bg-accent text-accent-foreground"
+              isActive &&
+                "bg-accent/30 border border-border/30 text-accent-foreground"
             )}
           >
             {title}

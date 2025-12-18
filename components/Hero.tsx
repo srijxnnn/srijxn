@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
 import { Typewriter } from "react-simple-typewriter";
@@ -9,7 +10,16 @@ import { Typewriter } from "react-simple-typewriter";
 const Hero = () => {
   return (
     <main className="flex items-center justify-center px-6">
-      <section className="text-center">
+      <section className="flex flex-col items-center text-center justify-center gap-10">
+        <Image
+          src="/mefr.jpg"
+          alt="Srijan Dhak"
+          width={150}
+          height={150}
+          className="rounded-full object-cover"
+          priority
+        />
+
         <div className="text-4xl md:text-6xl font-bold">
           Hi! I am
           <motion.div
@@ -25,7 +35,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-lg md:text-2xl m-6 max-w-2xl"
+          className="text-lg md:text-2xl max-w-2xl"
         >
           <div>A passionate developer building cool things on the web.</div>
           <Typewriter
