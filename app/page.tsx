@@ -2,7 +2,6 @@
 
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import ModeToggle from "@/components/ModeToggle";
 import Navbar from "@/components/Navbar";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { AnimatePresence, motion } from "framer-motion";

@@ -20,7 +20,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import Navbar from "@/components/Navbar";
-import ModeToggle from "@/components/ModeToggle";
 import {
   Mail,
   Phone,

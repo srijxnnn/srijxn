@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
-import ModeToggle from "@/components/ModeToggle";
 import {
   Download,
   Github,
