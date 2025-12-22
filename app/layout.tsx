@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Srijan Dhak | Portfolio",
+  title: "Srijan Dhak",
   description: "The portfolio website of Srijan Dhak.",
 };
 
